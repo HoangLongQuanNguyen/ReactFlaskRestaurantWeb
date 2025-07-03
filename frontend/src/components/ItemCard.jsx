@@ -28,7 +28,7 @@ const ItemCard = ({item, setItems}) => {
       </Card.Body>
       <Card.Footer justifyContent="flex-end">
         <EditItem item={item} setItems={setItems}/>
-        <Button onClick={handleDeleteItem}>Delete</Button>
+        <Button onClick={handleDeleteItem} variant="solid" colorPalette="yellow" color="white">Delete</Button>
       </Card.Footer>
     </Card.Root>
     

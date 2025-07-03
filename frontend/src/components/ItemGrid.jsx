@@ -1,4 +1,4 @@
-import {Center, Flex, Grid, Text} from '@chakra-ui/react'
+import {Flex, Grid, Text} from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import ItemCard from './ItemCard'
 import { BASE_URL } from '@/App'
@@ -27,7 +27,7 @@ function ItemGrid({items, setItems}) {
         base: "1fr",
         md: "repeat(2, 1fr)",
         lg: "repeat(3, 1fr)",
-        }} gap={4}>
+        }} gap={4} px={150} py={4}>
         {items.map((item) => (
           <ItemCard key={item.id} item={item} setItems={setItems}/>
         ))}

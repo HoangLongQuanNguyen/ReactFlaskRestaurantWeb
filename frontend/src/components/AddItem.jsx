@@ -47,7 +47,7 @@ const AddItem = () => {
     <VStack alignItems="start">
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button variant="outline">Add Item</Button>
+          <Button variant="plain">Add Item</Button>
         </Dialog.Trigger>
         <Portal>
           <form onSubmit={handleAddItem}>
