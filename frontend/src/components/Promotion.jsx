@@ -3,14 +3,14 @@ import React from 'react'
 
 function Promotion() {
   return (
-    <Container width="dvw"  background="#f5f5f5" py={5}>
+    <Container width="dvw"  background="#ffffffff" py={5}>
         <SimpleGrid minChildWidth="sm" templateColumns={{ sm: '1fr', md: '1fr 1fr' }} spacing={8} rowGap="4">
             <Box>
                 <Center>
                     <Flex direction="column" alignItems={"center"} spaceY={5} py={50}>
-                        <Text fontWeight="bold" textStyle="2xl">Welcome</Text>
-                        <Text fontSize={20}>Buy 5 Sandwitches, Get 1 Free</Text>
-                        <Link href="https://pos.chowbus.com/online-ordering/store/restaurant/15068" isExternal>
+                        <Text fontWeight="bold" textStyle="3xl" color={'yellow.300'}>Welcome</Text>
+                        <Text textStyle="3xl" color={'yellow.300'}>Buy 5 Sandwiches – Get 1 Free!</Text>
+                        <Link href="https://pos.chowbus.com/online-ordering/store/restaurant/15068" textDecoration="none" isExternal>
                             <Button variant="solid" colorPalette="yellow" fontSize={20} color="white">Order Now</Button>
                         </Link>
                     </Flex> 
@@ -18,7 +18,7 @@ function Promotion() {
             </Box> 
             <Box>
                 <Center>
-                    <img src='/promotion.png' alt='promotion' width={500} height={500} ></img>
+                    <img src='/promotion.png' alt='promotion' width={300} height={300} ></img>
                 </Center>   
             </Box> 
         </SimpleGrid>  

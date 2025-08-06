@@ -4,9 +4,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <Container width="dvw"  background="#f5f5f5" py={5}>
+    <Container width="dvw" py={5}>
+        <hr></hr>
         <SimpleGrid minChildWidth="sm" templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr' }}
-          spacing={8} rowGap="4">
+          spacing={8} rowGap="4" paddingTop={5}>
             <Box>
                 <Flex direction="column" alignItems={"center"}>
                     <Text fontWeight="bold" textStyle="2xl">TIGER88</Text>

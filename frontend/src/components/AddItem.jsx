@@ -8,6 +8,8 @@ const AddItem = () => {
     name: "",
     price: "",
     description: "",
+    group: "",
+    groupId: "",
   })
 
   const handleAddItem = async (e) => {
@@ -38,6 +40,8 @@ const AddItem = () => {
         name: "",
         price: "",
         description: "",
+        group: "",
+        groupId: "",
       })
     }
   }
@@ -83,6 +87,24 @@ const AddItem = () => {
                     <Input placeholder='Price' 
                       value={inputs.price}
                       onChange={(e) => setInputs({...inputs, price: e.target.value})}/>
+                    </DataList.ItemValue>
+                  </DataList.Item>
+
+                  <DataList.Item>
+                    <DataList.ItemLabel>Group</DataList.ItemLabel>
+                    <DataList.ItemValue>
+                    <Input placeholder='A/B/C/...' 
+                      value={inputs.group}
+                      onChange={(e) => setInputs({...inputs, group: e.target.value})}/>
+                    </DataList.ItemValue>
+                  </DataList.Item>
+
+                  <DataList.Item>
+                    <DataList.ItemLabel>Group Id</DataList.ItemLabel>
+                    <DataList.ItemValue>
+                    <Input placeholder='1/2/3/...' 
+                      value={inputs.groupId}
+                      onChange={(e) => setInputs({...inputs, groupId: e.target.value})}/>
                     </DataList.ItemValue>
                   </DataList.Item>
                 </DataList.Root>

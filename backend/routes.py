@@ -5,7 +5,14 @@ from modules import Item
 # Get all items
 @app.route("/api/items", methods=["GET"])
 def get_items():
-    items = Item.query.all()
+    group = request.args.get("group")  # Get ?group=B
+    if group:
+        # Filter by group
+        items = Item.query.filter_by(group=group).all()
+    else:
+        # Return all if no group specified
+        items = Item.query.all()
+    
     result = [item.to_json() for item in items]
     return jsonify(result)
 
@@ -18,9 +25,11 @@ def create_item():
         price = data.get("price")
         name = data.get("name")
         description = data.get("description")
+        group = data.get("group")
+        groupId = data.get("groupId")
         img_url = f"https://www.flaticon.com/free-icon/food-tray_3180456?term=food+service&page=1&position=5&origin=tag&related_id=3180456"
     
-        new_item = Item(name=name, price=price, description=description, img_url=img_url)    
+        new_item = Item(name=name, price=price, description=description, group=group, groupId=groupId, img_url=img_url)    
         db.session.add(new_item)
         db.session.commit()
 
@@ -57,6 +66,8 @@ def update_item(id):
             item.name = data.get("name", item.name)
             item.price = data.get("price", item.price)
             item.description = data.get("description", item.description)
+            item.group = data.get("group", item.group)
+            item.groupId = data.get("groupId", item.groupId)
             
             db.session.commit()
             return jsonify({"msg": "Item updated successfully"}), 201

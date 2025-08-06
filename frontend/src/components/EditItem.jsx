@@ -70,6 +70,15 @@ const EditItem = ({item, setItems}) => {
                       onChange={(e) => setInputs({...inputs, price: e.target.value})}/>
                     </DataList.ItemValue>
                   </DataList.Item>
+
+                  <DataList.Item>
+                    <DataList.ItemLabel>Group</DataList.ItemLabel>
+                    <DataList.ItemValue>
+                    <Input placeholder='A/B/C/...' 
+                      value={inputs.group}
+                      onChange={(e) => setInputs({...inputs, group: e.target.value})}/>
+                    </DataList.ItemValue>
+                  </DataList.Item>
                 </DataList.Root>
               </Dialog.Body>
               

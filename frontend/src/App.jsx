@@ -1,25 +1,21 @@
-import {Container, Stack } from "@chakra-ui/react"
-import Navbar from "./components/Navbar"
-import Promotion from "./components/Promotion"
-import MainMenu from "./components/MainMenu"
-import ItemGrid from "./components/ItemGrid"
-import Footer from "./components/Footer"
-import { useState } from "react"
+import { HashRouter, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import SubMenu from "./pages/SubMenu"
+import ContactUs from "./pages/ContactUs"
 
 export const BASE_URL = "http://127.0.0.1:5000/api"
 
 function App() {
-  const [items, setItems] = useState([]);
+  
   return (
-    <Stack minH={"100vh"} minW={"100vh"}>
-      <Navbar setItems = {setItems}/>
-      <Container fluid>
-        <Promotion/>
-        <MainMenu/>
-        <ItemGrid items = {items} setItems={setItems}/>
-      </Container>
-      <Footer/>
-    </Stack>
+    <HashRouter>
+      <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route path="/SubMenu/:group" element={<SubMenu/>}/>
+        <Route path="/Contact" element={<ContactUs/>}/>
+      </Routes>
+    </HashRouter>
+      
   )
 }
 

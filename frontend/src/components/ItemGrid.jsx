@@ -1,13 +1,13 @@
-import {Flex, Grid, Text} from '@chakra-ui/react'
+import {Center, Flex, Grid, Text} from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import ItemCard from './ItemCard'
 import { BASE_URL } from '@/App'
 
-function ItemGrid({items, setItems}) {
+function ItemGrid({group, items, setItems}) {
   useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await fetch(BASE_URL + "/items")
+        const res = await fetch(BASE_URL + "/items" + "?group=" + group)
         const data = await res.json()
 
         if(!res.ok){
@@ -27,7 +27,7 @@ function ItemGrid({items, setItems}) {
         base: "1fr",
         md: "repeat(2, 1fr)",
         lg: "repeat(3, 1fr)",
-        }} gap={4} px={150} py={4}>
+        }} gap={25} py={4} justifyItems={"center"}>
         {items.map((item) => (
           <ItemCard key={item.id} item={item} setItems={setItems}/>
         ))}

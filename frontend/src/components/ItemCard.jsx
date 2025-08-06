@@ -1,4 +1,4 @@
-import { Card, Button } from '@chakra-ui/react'
+import { Card, Button, Image } from '@chakra-ui/react'
 import React from 'react'
 import EditItem from './EditItem'
 import { BASE_URL } from '@/App'
@@ -19,12 +19,14 @@ const ItemCard = ({item, setItems}) => {
       
     }
   }
+  const imageName = "/" + item.group + item.groupId + ".png"
   return (
     <Card.Root width="320px">
       <Card.Body gap="2">
-        <Card.Title mt="2">{item.name}</Card.Title>
+        <Image src={imageName} height={250}/>
+        <Card.Title mt="2">{item.group + item.groupId + ". " + item.name}</Card.Title>
         <Card.Description>{item.description}</Card.Description>
-        <Card.Description>{"$" + item.price}</Card.Description>
+        <Card.Description color={'yellow.300'} fontWeight="bold" fontSize={20}>{"$" + item.price}</Card.Description>
       </Card.Body>
       <Card.Footer justifyContent="flex-end">
         <EditItem item={item} setItems={setItems}/>
