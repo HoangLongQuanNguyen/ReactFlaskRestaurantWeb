@@ -20,7 +20,7 @@ function ItemGrid({group, items, setItems}) {
       }
     }
     getItems()
-  }, [setItems])
+  }, [group, setItems])
   return (
     <>
       <Grid templateColumns={{
