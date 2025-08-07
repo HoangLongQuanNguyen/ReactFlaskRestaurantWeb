@@ -1,6 +1,5 @@
 import {Container, Stack, Flex, Text } from "@chakra-ui/react"
 import Navbar from "@/components/Navbar"
-import Promotion from "@/components/Promotion"
 import ItemGrid from "@/components/ItemGrid"
 import Footer from "@/components/Footer"
 import { useState } from "react"

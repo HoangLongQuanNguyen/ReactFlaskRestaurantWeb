@@ -3,7 +3,7 @@ import Home from "./pages/Home"
 import SubMenu from "./pages/SubMenu"
 import ContactUs from "./pages/ContactUs"
 
-export const BASE_URL = "http://127.0.0.1:5000/api"
+export const BASE_URL = "https://reactflaskrestaurantweb.onrender.com/api"
 
 function App() {
   
