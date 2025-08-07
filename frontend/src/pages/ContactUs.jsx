@@ -3,10 +3,10 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import { useState } from "react"
 import emailjs from 'emailjs-com'
-import { Toaster, toaster } from "@/components/ui/toaster"
+import { toaster } from "@/components/ui/toaster"
 
 function ContactUs() {
-  const [items, setItems] = useState([]);
+  const [setItems] = useState([]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -65,7 +65,12 @@ function ContactUs() {
           >
             <Field.Root>
               <Field.Label>Name</Field.Label>
-              <Input name="name" value={formData.name} onChange={handleChange} />
+              <Input 
+                name="name" 
+                value={formData.name} 
+                onChange={handleChange} 
+                required
+              />
             </Field.Root>
 
             <Field.Root>
@@ -75,6 +80,7 @@ function ContactUs() {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
             </Field.Root>
 
@@ -85,6 +91,7 @@ function ContactUs() {
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
+                required
               />
             </Field.Root>
 
@@ -94,6 +101,7 @@ function ContactUs() {
                 name="comments"
                 value={formData.comments}
                 onChange={handleChange}
+                required
               />
             </Field.Root>
 

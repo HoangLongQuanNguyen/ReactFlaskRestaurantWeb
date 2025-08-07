@@ -10,7 +10,7 @@ function Home() {
   return (
     <Stack width={"full"} height={"full"}>
       <Navbar setItems = {setItems}/>
-      <Container fluid>
+      <Container height={"full"} width={"full"}>
         <Promotion/>
         <MainMenu/>
       </Container>
