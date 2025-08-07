@@ -32,11 +32,7 @@ function ItemGrid({group, items, setItems}) {
           <ItemCard key={item.id} item={item} setItems={setItems}/>
         ))}
       </Grid>
-      {items.length === 0 && (
-        <Flex justifyContent={'center'}>
-          <Text>No item found! Please add your first item!</Text>
-        </Flex>
-      )}
+      
     </>
     
     
