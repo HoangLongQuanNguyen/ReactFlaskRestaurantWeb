@@ -25,7 +25,7 @@ function ItemGrid({group, items, setItems}) {
     <>
       <Grid templateColumns={{
         base: "1fr",
-        md: "repeat(3, 1fr)",
+        md: "repeat(2, 1fr)",
         lg: "repeat(4, 1fr)",
         }} gap={15} py={4} justifyItems={"center"}>
         {items.map((item) => (
