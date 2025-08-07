@@ -1,4 +1,4 @@
-import {Center, Flex, Grid, Text} from '@chakra-ui/react'
+import {Grid} from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import ItemCard from './ItemCard'
 import { BASE_URL } from '@/App'
@@ -7,7 +7,7 @@ function ItemGrid({group, items, setItems}) {
   useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await fetch(BASE_URL + "/items" + "?group=" + group)
+        const res = await fetch(`${BASE_URL}/items?group=${group}`)
         const data = await res.json()
 
         if(!res.ok){
@@ -31,11 +31,8 @@ function ItemGrid({group, items, setItems}) {
         {items.map((item) => (
           <ItemCard key={item.id} item={item} setItems={setItems}/>
         ))}
-      </Grid>
-      
+      </Grid>   
     </>
-    
-    
   )
 }
 export default ItemGrid
