@@ -11,7 +11,7 @@ const Footer = () => {
             <Box>
                 <Flex direction="column" alignItems={"center"}>
                     <Text fontWeight="bold" textStyle="2xl">TIGER88</Text>
-                    <Text fontWeight="bold" textStyle="2xl">Banhmi & Boba</Text>
+                    <Text fontWeight="bold" textStyle="2xl">Vietnamese Café</Text>
                 </Flex>
             </Box>
 

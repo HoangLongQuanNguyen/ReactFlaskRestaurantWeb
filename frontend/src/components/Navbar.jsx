@@ -1,10 +1,14 @@
 import { Container, Box, Flex, HStack, Button, Text, IconButton, Menu, Portal} from '@chakra-ui/react'
 import React from 'react'
+import {useState} from 'react'
 import AddItem from './AddItem'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+
+  const [isOpen, setIsOpen] = useState(false)
+  const handleClose = () => setIsOpen(false)
   return (
     <Container width="full">
         <Box my={4}>
@@ -16,7 +20,7 @@ const Navbar = () => {
                   <Link to="/" textDecoration="none" outline={'none'}>
                     <Flex direction="column" alignItems={"center"}>
                       <Text fontWeight="bold" textStyle="2xl">TIGER88</Text>
-                      <Text fontWeight="bold" textStyle="2xl">Banhmi & Boba</Text>
+                      <Text fontWeight="bold" textStyle="2xl">Vietnamese Café</Text>
                     </Flex>
                   </Link>
                     
@@ -42,30 +46,30 @@ const Navbar = () => {
                   </HStack>
                 </Flex>
 
-                <Menu.Root>
+                <Menu.Root open={isOpen} onOpenChange={setIsOpen}>
                   <Menu.Trigger asChild>
                     <IconButton aria-label="HamburgerIcon" display={['flex', 'flex', 'flex', 'none']}>
-                      <GiHamburgerMenu />
+                      <GiHamburgerMenu/>
                     </IconButton> 
                   </Menu.Trigger>
                   <Portal>
                     <Menu.Positioner display={['flex', 'flex', 'flex', 'none']}>
                       <Menu.Content>
                         <Flex flexDir="column" align="flex-start">
-                          <Link to="/" textDecoration="none" outline={'none'}>
+                          <Link to="/" textDecoration="none" outline={'none'} onClick={handleClose}>
                             <Button variant="plain" onClick={() => {
                             const element = document.getElementById('mainMenu')
                             element?.scrollIntoView({behavior: 'smooth'})}}>Menu
                             </Button>
                           </Link>
-                          <Link to="https://pos.chowbus.com/online-ordering/store/restaurant/15068" textDecoration="none" isExternal>
+                          <Link to="https://pos.chowbus.com/online-ordering/store/restaurant/15068" textDecoration="none" isExternal onClick={handleClose}>
                             <Button variant="plain" color={'yellow.300'}>Order Online</Button>
                           </Link>
-                          <Button variant="plain">Call 314-287-6868 to order</Button>
-                          <Link to="/Contact" textDecoration="none" outline={'none'}>
+                          <Button variant="plain" onClick={handleClose}>Call 314-287-6868 to order</Button>
+                          <Link to="/Contact" textDecoration="none" outline={'none'} onClick={handleClose}>
                             <Button variant="plain">Contact Us</Button>
                           </Link>
-                          <AddItem/> 
+                          <AddItem onClick={handleClose}/>                       
                         </Flex>
                       </Menu.Content>
                     </Menu.Positioner>

@@ -52,7 +52,7 @@ function ContactUs() {
           <Text>We would love to hear your feedback and questions</Text>
         </Flex>
 
-        <Flex justify="center" align="center" minH="60vh" bg="gray.50" px={4}>   
+        <Flex justify="center" align="center" minH="60vh" px={4}>   
           <Box
             as="form"
             onSubmit={handleSubmit}
@@ -62,6 +62,7 @@ function ContactUs() {
             w="full"
             maxW="md"
             bg="white"
+            _dark={{bg: "black"}}
           >
             <Field.Root>
               <Field.Label>Name</Field.Label>
