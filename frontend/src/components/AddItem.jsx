@@ -51,7 +51,7 @@ const AddItem = () => {
     <VStack alignItems="start">
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button variant="plain">Add Item</Button>
+          <Button variant="plain" _hover={{color:"yellow.400"}}>Add Item</Button>
         </Dialog.Trigger>
         <Portal>
           <form onSubmit={handleAddItem}>

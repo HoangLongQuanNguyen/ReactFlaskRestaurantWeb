@@ -25,7 +25,7 @@ function SubMenu() {
       <Navbar setItems = {setItems}/>
       <Container height={"full"} width={"full"}>
         <Flex alignItems={"center"} justifyContent={"center"} py={10}>
-          <Text fontWeight="bold" textStyle="3xl" id="groupName">{groupName}</Text>
+          <Text fontWeight="bold" textStyle="4xl" id="groupName">{groupName}</Text>
         </Flex>
         <ItemGrid items = {items} setItems={setItems} group={group}/>
       </Container>

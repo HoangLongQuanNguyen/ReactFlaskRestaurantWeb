@@ -32,7 +32,7 @@ const EditItem = ({item, setItems}) => {
         <VStack alignItems="start">
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button variant="outline" color={'yellow.300'}>Edit Item</Button>
+          <Button variant="outline" color={'yellow.300'} borderRadius={15} _hover={{ bg: "yellow.500" }}>Edit Item</Button>
         </Dialog.Trigger>
         <Portal>
           <form onSubmit={handleEditItem}>

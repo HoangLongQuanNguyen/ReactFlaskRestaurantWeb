@@ -48,8 +48,8 @@ function ContactUs() {
       <Navbar setItems = {setItems}/>
       <Container fluid>
         <Flex alignItems={"center"} justifyContent={"center"} paddingY={10} direction="column" >
-          <Text fontWeight="bold" textStyle="3xl">Send Us a Message!</Text>
-          <Text>We would love to hear your feedback and questions</Text>
+          <Text fontWeight="bold" textStyle="4xl" textAlign="center">Send Us a Message!</Text>
+          <Text textAlign="center" paddingTop="10px">We would love to hear from you.</Text>
         </Flex>
 
         <Flex justify="center" align="center" minH="60vh" px={4}>   
@@ -57,39 +57,45 @@ function ContactUs() {
             as="form"
             onSubmit={handleSubmit}
             borderWidth="1px"
-            borderRadius="md"
+            borderRadius={15}
             p={6}
             w="full"
             maxW="md"
-            bg="white"
+            bg="#f2f6f8"
             _dark={{bg: "black"}}
           >
-            <Field.Root>
+            <Field.Root borderRadius={15}>
               <Field.Label>Name</Field.Label>
               <Input 
                 name="name" 
+                borderRadius={15}
+                bg="white"
                 value={formData.name} 
                 onChange={handleChange} 
                 required
               />
             </Field.Root>
 
-            <Field.Root>
-              <Field.Label>Email</Field.Label>
+            <Field.Root borderRadius={15}>
+              <Field.Label pt={2}>Email</Field.Label>
               <Input
                 name="email"
                 type="email"
+                borderRadius={15}
+                bg="white"
                 value={formData.email}
                 onChange={handleChange}
                 required
               />
             </Field.Root>
 
-            <Field.Root>
-              <Field.Label>Phone</Field.Label>
+            <Field.Root borderRadius={15}>
+              <Field.Label pt={2}>Phone</Field.Label>
               <Input
                 name="phone"
                 type="tel"
+                borderRadius={15}
+                bg="white"
                 value={formData.phone}
                 onChange={handleChange}
                 required
@@ -97,19 +103,23 @@ function ContactUs() {
             </Field.Root>
 
             <Field.Root>
-              <Field.Label>Comments</Field.Label>
+              <Field.Label pt={2}>Comments</Field.Label>
               <Textarea
                 name="comments"
+                borderRadius={15}
+                bg="white"
                 value={formData.comments}
                 onChange={handleChange}
                 required
               />
+              <Text>*Let us know in the comments if you are interested in joining our family.</Text>
             </Field.Root>
 
-            <Button type="submit" colorPalette={"yellow"} mt={4} width="full">
+            <Button type="submit" colorPalette={"yellow"} mt={4} width="full" borderRadius={15}>
               Submit
             </Button>
           </Box>
+          
         </Flex>
       </Container>
       <Footer/>

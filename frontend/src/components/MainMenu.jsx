@@ -19,7 +19,7 @@ const MainMenu = () => {
   return (
     <div id="mainMenu">
       <Flex alignItems={"center"} justifyContent={"center"} py={10}>
-        <Text fontWeight="bold" textStyle="3xl">Menu</Text>
+        <Text fontWeight="bold" textStyle="4xl">Menu</Text>
       </Flex>
 
       <Grid templateColumns={{
@@ -28,17 +28,16 @@ const MainMenu = () => {
           lg: "repeat(4, 1fr)",
           }} gap={15} py={4} justifyItems={"center"} alignItems={"center"} maxWidth={"full"}>
           {cards.map((item, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-              <Card.Root width="320px">
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index} py={2}>
+              <Card.Root width="320px" borderRadius={15} bg="#f2f6f8" boxShadow="md">
                 <Image src={item.src} width={300} height={300} />
                 <Card.Body gap="1">
-                  <Card.Title>{item.title}</Card.Title>
-                  <Card.Description>{item.title}</Card.Description>
+                  <Card.Title fontWeight="bold" textStyle="2xl">{item.title}</Card.Title>
                 </Card.Body>
                 <Card.Footer gap="1">
                   <Link to={item.to}>
-                    <Button variant="solid" colorPalette="yellow" color="white">
-                      View All
+                    <Button variant="solid" colorPalette="yellow" color="white" borderRadius={15} _hover={{ bg: "yellow.500" }}>
+                      Choose your options
                     </Button>
                   </Link>
                 </Card.Footer>

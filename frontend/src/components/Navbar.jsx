@@ -31,16 +31,16 @@ const Navbar = () => {
                     <Link to="/" textDecoration="none" outline={'none'}>
                       <Button variant="plain" onClick={() => {
                       const element = document.getElementById('mainMenu')
-                      element?.scrollIntoView({behavior: 'smooth'})}}>Menu
+                      element?.scrollIntoView({behavior: 'smooth'})}} _hover={{color:"yellow.400"}}>Menu
                       </Button>
                     </Link>
                     
                     <Link to="https://pos.chowbus.com/online-ordering/store/restaurant/15068" textDecoration="none" outline={'none'} isExternal>
-                      <Button variant="solid" colorPalette="yellow">Order Online</Button>
+                      <Button variant="solid" colorPalette="yellow" borderRadius={15} _hover={{ bg: "yellow.500" }}>Order Online</Button>
                     </Link>
-                    <Button variant="plain">Call 314-287-6868 to order</Button>
+                    <Button variant="plain" _hover={{color:"yellow.400"}}>Call 314-287-6868 to order</Button>
                     <Link to="/Contact" textDecoration="none" outline={'none'}>
-                      <Button variant="plain">Contact Us</Button>
+                      <Button variant="plain" _hover={{color:"yellow.400"}}>Contact Us</Button>
                     </Link>
                     <AddItem/> 
                   </HStack>

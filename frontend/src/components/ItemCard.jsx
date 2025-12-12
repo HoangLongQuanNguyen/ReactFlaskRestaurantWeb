@@ -21,16 +21,16 @@ const ItemCard = ({item, setItems}) => {
   }
   const imageName = "/" + item.group + item.groupId + ".png"
   return (
-    <Card.Root width="320px">
+    <Card.Root width="320px" borderRadius={15} bg="#f2f6f8" boxShadow="md">
       <Card.Body gap="2">
         <Image src={imageName} height={250}/>
-        <Card.Title mt="2">{item.group + item.groupId + ". " + item.name}</Card.Title>
-        <Card.Description>{item.description}</Card.Description>
-        <Card.Description color={'yellow.300'} fontWeight="bold" fontSize={20}>{"$" + item.price}</Card.Description>
+        <Card.Title fontWeight="bold" textStyle="2xl" mt="2">{item.group + item.groupId + ". " + item.name}</Card.Title>
+        <Card.Description textStyle="md">{item.description}</Card.Description>
       </Card.Body>
-      <Card.Footer justifyContent="flex-end">
+      <Card.Footer justifyContent="space-between">
+        <Card.Description color={'yellow.300'} fontWeight="bold" fontSize={20}>{"$" + item.price}</Card.Description>
         <EditItem item={item} setItems={setItems}/>
-        <Button onClick={handleDeleteItem} variant="solid" colorPalette="yellow" color="white">Delete</Button>
+        <Button onClick={handleDeleteItem} variant="solid" colorPalette="yellow" color="white" borderRadius={15} _hover={{ bg: "yellow.500" }}>Delete</Button>
       </Card.Footer>
     </Card.Root>
     
