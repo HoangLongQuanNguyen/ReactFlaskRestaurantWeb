@@ -1,14 +1,11 @@
-import { Container, Box, Flex, HStack, Button, Text, IconButton, Menu, Portal} from '@chakra-ui/react'
+import { Container, Box, Flex, HStack, Button, Text, IconButton, Icon, Spacer} from '@chakra-ui/react'
 import React from 'react'
-import {useState} from 'react'
 import AddItem from './AddItem'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
-  const [isOpen, setIsOpen] = useState(false)
-  const handleClose = () => setIsOpen(false)
   return (
     <Container width="full">
         <Box my={4}>
@@ -22,23 +19,21 @@ const Navbar = () => {
                       <Text fontWeight="bold" textStyle="2xl">TIGER88</Text>
                       <Text fontWeight="bold" textStyle="2xl">Vietnamese Café</Text>
                     </Flex>
-                  </Link>
-                    
+                  </Link>  
                 </Flex>
-                
+                <Spacer />
                 <Flex alignItems={"center"} display={['none', 'none', 'none', 'flex']}>
                   <HStack wrap="wrap" gap="6">
                     <Link to="/" textDecoration="none" outline={'none'}>
                       <Button variant="plain" onClick={() => {
                       const element = document.getElementById('mainMenu')
-                      element?.scrollIntoView({behavior: 'smooth'})}} _hover={{color:"yellow.400"}}>Menu
-                      </Button>
+                      element?.scrollIntoView({behavior: 'smooth'})}} _hover={{color:"yellow.400"}}>Menu</Button>
                     </Link>
                     
                     <Link to="https://pos.chowbus.com/online-ordering/store/restaurant/15068" textDecoration="none" outline={'none'} isExternal>
-                      <Button variant="solid" colorPalette="yellow" borderRadius={15} _hover={{ bg: "yellow.500" }}>Order Online</Button>
+                      <Button variant="solid" colorPalette="yellow" borderRadius={15} _hover={{ bg: "yellow.500" }} boxShadow="md">Order Online</Button>
                     </Link>
-                    <Button variant="plain" _hover={{color:"yellow.400"}}>Call 314-287-6868 to order</Button>
+                    <Button variant="plain" _hover={{color:"yellow.400"}}>Call 314-287-6868 to Order</Button>
                     <Link to="/Contact" textDecoration="none" outline={'none'}>
                       <Button variant="plain" _hover={{color:"yellow.400"}}>Contact Us</Button>
                     </Link>
@@ -46,39 +41,14 @@ const Navbar = () => {
                   </HStack>
                 </Flex>
 
-                <Menu.Root open={isOpen} onOpenChange={setIsOpen}>
-                  <Menu.Trigger asChild>
-                    <IconButton aria-label="HamburgerIcon" display={['flex', 'flex', 'flex', 'none']}>
-                      <GiHamburgerMenu/>
-                    </IconButton> 
-                  </Menu.Trigger>
-                  <Portal>
-                    <Menu.Positioner display={['flex', 'flex', 'flex', 'none']}>
-                      <Menu.Content>
-                        <Flex flexDir="column" align="flex-start">
-                          <Link to="/" textDecoration="none" outline={'none'} onClick={handleClose}>
-                            <Button variant="plain" onClick={() => {
-                            const element = document.getElementById('mainMenu')
-                            element?.scrollIntoView({behavior: 'smooth'})}}>Menu
-                            </Button>
-                          </Link>
-                          <Link to="https://pos.chowbus.com/online-ordering/store/restaurant/15068" textDecoration="none" isExternal onClick={handleClose}>
-                            <Button variant="plain" color={'yellow.300'}>Order Online</Button>
-                          </Link>
-                          <Button variant="plain" onClick={handleClose}>Call 314-287-6868 to order</Button>
-                          <Link to="/Contact" textDecoration="none" outline={'none'} onClick={handleClose}>
-                            <Button variant="plain">Contact Us</Button>
-                          </Link>
-                          <AddItem onClick={handleClose}/>                       
-                        </Flex>
-                      </Menu.Content>
-                    </Menu.Positioner>
-                  </Portal>
-                </Menu.Root>
-                  
+                <Link to="/menu">
+                  <IconButton aria-label="HamburgerIcon" display={['flex', 'flex', 'flex', 'none']}>
+                    <Icon as={GiHamburgerMenu} boxSize={8} />
+                  </IconButton> 
+                </Link>
             </Flex>             
         </Box>
-        <hr></hr>
+      <hr/>
     </Container>
   )
 }

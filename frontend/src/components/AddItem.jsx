@@ -55,9 +55,9 @@ const AddItem = () => {
         </Dialog.Trigger>
         <Portal>
           <form onSubmit={handleAddItem}>
-          <Dialog.Backdrop />
+          <Dialog.Backdrop/>
           <Dialog.Positioner>
-            <Dialog.Content>
+            <Dialog.Content >
               <Dialog.Header>
                 <Dialog.Title>Add new item</Dialog.Title>
               </Dialog.Header>
@@ -68,7 +68,7 @@ const AddItem = () => {
                     <DataList.ItemValue>
                     <Input placeholder='Item Name' 
                       value={inputs.name}
-                      onChange={(e) => setInputs({...inputs, name: e.target.value})}/>
+                      onChange={(e) => setInputs({...inputs, name: e.target.value})} borderRadius={15}/>
                     </DataList.ItemValue>
                   </DataList.Item>
                   
@@ -77,7 +77,7 @@ const AddItem = () => {
                     <DataList.ItemValue>
                     <Input placeholder='Description' 
                       value={inputs.description}
-                      onChange={(e) => setInputs({...inputs, description: e.target.value})}/>
+                      onChange={(e) => setInputs({...inputs, description: e.target.value})} borderRadius={15}/>
                     </DataList.ItemValue>
                   </DataList.Item>
                   
@@ -86,7 +86,7 @@ const AddItem = () => {
                     <DataList.ItemValue>
                     <Input placeholder='Price' 
                       value={inputs.price}
-                      onChange={(e) => setInputs({...inputs, price: e.target.value})}/>
+                      onChange={(e) => setInputs({...inputs, price: e.target.value})} borderRadius={15}/>
                     </DataList.ItemValue>
                   </DataList.Item>
 
@@ -95,7 +95,7 @@ const AddItem = () => {
                     <DataList.ItemValue>
                     <Input placeholder='A/B/C/...' 
                       value={inputs.group}
-                      onChange={(e) => setInputs({...inputs, group: e.target.value})}/>
+                      onChange={(e) => setInputs({...inputs, group: e.target.value})} borderRadius={15}/>
                     </DataList.ItemValue>
                   </DataList.Item>
 
@@ -104,7 +104,7 @@ const AddItem = () => {
                     <DataList.ItemValue>
                     <Input placeholder='1/2/3/...' 
                       value={inputs.groupId}
-                      onChange={(e) => setInputs({...inputs, groupId: e.target.value})}/>
+                      onChange={(e) => setInputs({...inputs, groupId: e.target.value})} borderRadius={15}/>
                     </DataList.ItemValue>
                   </DataList.Item>
                 </DataList.Root>
@@ -112,9 +112,9 @@ const AddItem = () => {
               
               <Dialog.Footer>
                     <Dialog.ActionTrigger asChild>
-                      <Button variant="outline">Cancel</Button>
+                      <Button variant="outline" color={'yellow.300'} borderRadius={15} _hover={{ bg: "yellow.500" }} boxShadow="md">Cancel</Button>
                     </Dialog.ActionTrigger>
-                    <Button type='submit'>Add</Button>
+                    <Button type='submit' variant="solid" colorPalette="yellow" color="white" borderRadius={15} _hover={{ bg: "yellow.500" }} boxShadow="md">Add</Button>
                 </Dialog.Footer>
               <Dialog.CloseTrigger asChild>
                 <CloseButton size="sm" />

@@ -30,7 +30,7 @@ const ItemCard = ({item, setItems}) => {
       <Card.Footer justifyContent="space-between">
         <Card.Description color={'yellow.300'} fontWeight="bold" fontSize={20}>{"$" + item.price}</Card.Description>
         <EditItem item={item} setItems={setItems}/>
-        <Button onClick={handleDeleteItem} variant="solid" colorPalette="yellow" color="white" borderRadius={15} _hover={{ bg: "yellow.500" }}>Delete</Button>
+        <Button onClick={handleDeleteItem} variant="solid" colorPalette="yellow" color="white" borderRadius={15} _hover={{ bg: "yellow.500" }} boxShadow="md">Delete</Button>
       </Card.Footer>
     </Card.Root>
     

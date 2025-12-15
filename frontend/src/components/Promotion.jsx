@@ -24,7 +24,7 @@ function Promotion() {
                     href="https://pos.chowbus.com/online-ordering/store/restaurant/15068"
                     isExternal
                     _hover={{ textDecoration: 'none' }}>
-                    <Button colorPalette="yellow" color="white" variant="solid" fontSize="lg" borderRadius={15} _hover={{ bg: "yellow.500" }}>
+                    <Button colorPalette="yellow" color="white" variant="solid" fontSize="lg" borderRadius={15} _hover={{ bg: "yellow.500" }} boxShadow="md">
                         Order Now
                     </Button>
                 </Link>

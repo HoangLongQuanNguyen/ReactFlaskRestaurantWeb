@@ -36,7 +36,7 @@ const MainMenu = () => {
                 </Card.Body>
                 <Card.Footer gap="1">
                   <Link to={item.to}>
-                    <Button variant="solid" colorPalette="yellow" color="white" borderRadius={15} _hover={{ bg: "yellow.500" }}>
+                    <Button variant="solid" colorPalette="yellow" color="white" borderRadius={15} _hover={{ bg: "yellow.500" }} boxShadow="md">
                       Choose your options
                     </Button>
                   </Link>
