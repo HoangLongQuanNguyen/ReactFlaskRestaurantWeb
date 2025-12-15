@@ -29,7 +29,6 @@ function MobileMenu() {
         <IconButton
           aria-label="Close menu"
           onClick={() => navigate(-1)}
-          margin={4}
         >
           <Icon as={IoClose} boxSize={8} />
         </IconButton> 
