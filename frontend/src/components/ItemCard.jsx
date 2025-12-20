@@ -2,11 +2,11 @@ import { Card, Button, Image } from '@chakra-ui/react'
 import React from 'react'
 import EditItem from './EditItem'
 import { BASE_URL } from '@/App'
-import { useUserRoles } from "./useUserRoles";
+import { useUserRoles } from "./useUserRoles"
 
 const ItemCard = ({item, setItems}) => {
 
-  const roles = useUserRoles();
+  const roles = useUserRoles()
 
   const handleDeleteItem = async () => {
     try {

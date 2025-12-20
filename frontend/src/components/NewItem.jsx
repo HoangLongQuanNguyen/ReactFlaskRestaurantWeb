@@ -19,9 +19,9 @@ function NewItem() {
             <Flex
                 direction="column"
                 align="left"
-                gap={6}
+                paddingTop={5}
                 pl={{ base: "0px", md: "55px" }}>
-                <Text fontWeight="bold" fontSize="4xl">SPICY BEEF NOODLE SOUP</Text>
+                <Text fontWeight="bold" fontSize="4xl" marginBottom={5}>SPICY BEEF NOODLE SOUP</Text>
                 <Text fontSize="1xl">A spicy and pungent Vietnamese beef and pork knuckle noodle soup from Huế, characterized by its thick vermicelli noodles, strong lemongrass flavor, and use of fermented shrimp paste.</Text>
             </Flex>
         </Box> 

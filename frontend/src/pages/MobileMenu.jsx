@@ -1,10 +1,14 @@
-import { IconButton, Flex, Text, Icon, Button } from "@chakra-ui/react";
-import { IoClose } from "react-icons/io5";
-import { useNavigate, Link} from "react-router-dom";
+import { IconButton, Flex, Text, Icon, Button } from "@chakra-ui/react"
+import { IoClose } from "react-icons/io5"
+import { useNavigate, Link} from "react-router-dom"
+import LogInButton from '@/components/LogInButton'
+import LogOutButton from '@/components/LogOutButton'
+import AddItem from '@/components/AddItem'
+import { useUserRoles } from "@/components/useUserRoles"
 
 function MobileMenu() {
-  const navigate = useNavigate();
-
+  const navigate = useNavigate()
+  const roles = useUserRoles()
   return (
     <Flex
       minH="100dvh"
@@ -56,7 +60,11 @@ function MobileMenu() {
 
         <Link to="/Contact">
           <Button variant="plain" _hover={{color:"yellow.400"}} fontSize="2xl">Contact Us</Button>
-        </Link>  
+        </Link> 
+
+        {roles.includes("Admin") && (<AddItem fontSize="2xl"/>)}        
+        <LogInButton fontSize="2xl"/>
+        <LogOutButton fontSize="2xl"/> 
       </Flex>
     </Flex>
   );

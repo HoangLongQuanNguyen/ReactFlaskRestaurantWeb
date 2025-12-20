@@ -3,7 +3,7 @@ import { Button, CloseButton, DataList, Dialog, Portal, VStack, Input} from '@ch
 import React, { useState } from 'react'
 import { Toaster, toaster } from "@/components/ui/toaster"
 
-const AddItem = () => {
+const AddItem = ({fontSize}) => {
   const [inputs, setInputs] = useState({
     name: "",
     price: "",
@@ -51,7 +51,7 @@ const AddItem = () => {
     <VStack alignItems="start">
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button variant="plain" _hover={{color:"yellow.400"}}>Add Item</Button>
+          <Button variant="plain" _hover={{color:"yellow.400"}} fontSize={fontSize}>Add Item</Button>
         </Dialog.Trigger>
         <Portal>
           <form onSubmit={handleAddItem}>

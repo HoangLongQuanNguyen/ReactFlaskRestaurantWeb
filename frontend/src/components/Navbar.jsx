@@ -9,8 +9,8 @@ import { useUserRoles } from "./useUserRoles"
 
 const Navbar = () => {
 
-  const roles = useUserRoles();
-  
+  const roles = useUserRoles()
+
   return (
     <Container width="full">
         <Box my={4}>
