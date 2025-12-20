@@ -2,8 +2,12 @@ import { Card, Button, Image } from '@chakra-ui/react'
 import React from 'react'
 import EditItem from './EditItem'
 import { BASE_URL } from '@/App'
+import { useUserRoles } from "./useUserRoles";
 
 const ItemCard = ({item, setItems}) => {
+
+  const roles = useUserRoles();
+
   const handleDeleteItem = async () => {
     try {
       const res = await fetch(BASE_URL + "/items/" + item.id, {
@@ -28,9 +32,13 @@ const ItemCard = ({item, setItems}) => {
         <Card.Description textStyle="md">{item.description}</Card.Description>
       </Card.Body>
       <Card.Footer justifyContent="space-between">
-        <Card.Description color={'yellow.300'} fontWeight="bold" fontSize={20}>{"$" + item.price}</Card.Description>
-        <EditItem item={item} setItems={setItems}/>
-        <Button onClick={handleDeleteItem} variant="solid" colorPalette="yellow" color="white" borderRadius={15} _hover={{ bg: "yellow.500" }} boxShadow="md">Delete</Button>
+        <Card.Description color={'yellow.300'} fontWeight="bold" fontSize={25}>{"$" + item.price}</Card.Description>
+        {roles.includes("Admin") && ( 
+        <>
+          <EditItem item={item} setItems={setItems}/>
+          <Button onClick={handleDeleteItem} variant="solid" colorPalette="yellow" color="white" borderRadius={15} fontWeight="bold" _hover={{ bg: "yellow.500" }} boxShadow="md">Delete</Button>
+        </>
+        )}
       </Card.Footer>
     </Card.Root>
     

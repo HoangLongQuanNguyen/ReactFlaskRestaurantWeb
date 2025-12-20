@@ -3,9 +3,14 @@ import React from 'react'
 import AddItem from './AddItem'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
+import LogInButton from './LogInButton'
+import LogOutButton from './LogOutButton'
+import { useUserRoles } from "./useUserRoles"
 
 const Navbar = () => {
 
+  const roles = useUserRoles();
+  
   return (
     <Container width="full">
         <Box my={4}>
@@ -37,7 +42,9 @@ const Navbar = () => {
                     <Link to="/Contact" textDecoration="none" outline={'none'}>
                       <Button variant="plain" _hover={{color:"yellow.400"}}>Contact Us</Button>
                     </Link>
-                    <AddItem/> 
+                    {roles.includes("Admin") && (<AddItem/>)}        
+                    <LogInButton/>
+                    <LogOutButton/>
                   </HStack>
                 </Flex>
 
