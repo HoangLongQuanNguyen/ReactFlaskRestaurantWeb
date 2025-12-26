@@ -35,7 +35,7 @@ const Navbar = () => {
                       element?.scrollIntoView({behavior: 'smooth'})}} _hover={{color:"yellow.400"}}>Menu</Button>
                     </Link>
                     
-                    <Link to="https://pos.chowbus.com/online-ordering/store/restaurant/15068" textDecoration="none" outline={'none'} isExternal>
+                    <Link to="https://pos.chowbus.com/online-ordering/store/restaurant/15068" textDecoration="none" outline={'none'}>
                       <Button variant="solid" colorPalette="yellow" borderRadius={15} _hover={{ bg: "yellow.500" }} boxShadow="md">Order Online</Button>
                     </Link>
                     <Button variant="plain" _hover={{color:"yellow.400"}}>Call 314-287-6868 to Order</Button>

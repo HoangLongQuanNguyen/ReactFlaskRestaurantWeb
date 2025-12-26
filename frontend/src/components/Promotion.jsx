@@ -33,7 +33,7 @@ function Promotion() {
         </Box>
 
         <Box flex="1">
-            <img src="/promotion.png" alt="promotion" borderRadius="16px" w="100%" h="500px" objectFit="cover" />
+            <img src="/promotion.png" alt="promotion" w="100%" h="500px" />
         </Box>
         
     </Flex>
